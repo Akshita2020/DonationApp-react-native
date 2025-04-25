@@ -16,15 +16,21 @@ const SingleDontionItem = ({
   badgeTitle,
   donationTitle,
   price,
-}: SingleDontionItem) => {
+}: SingleDontionItemProps) => {
   return (
     <View>
       <View>
-        <Badge title={badgeTitle} />
-        <Image source={{uri: uri}} style={styles.image} />
+        <View style={styles.badge}>
+          <Badge title={badgeTitle} />
+        </View>
+        <Image source={{uri: uri}} style={styles.image} resizeMode='contain' />
       </View>
-      <Header title={donationTitle} type={3} color={'#0A043C'} />
-      <Header title={'$'+price.toFixed(2)} type={3} color={'#156CF7'} />
+      <View style={styles.donationConatiner}>
+        <Header title={donationTitle} type={3} color={'#0A043C'} />
+        <View style={styles.price}>
+          <Header title={'$' + price.toFixed(2)} type={3} color={'#156CF7'} />
+        </View>
+      </View>
     </View>
   );
 };
