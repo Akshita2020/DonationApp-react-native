@@ -5,7 +5,7 @@ interface CategoriesProps {
   selectedCategoryId: number;
 }
 
-const initialState: CategoriesProps = {
+const intialState: CategoriesProps = {
   categories: [
     {
       categoryId: 1,
@@ -65,10 +65,10 @@ const initialState: CategoriesProps = {
 
 export const Categories = createSlice({
   name: 'categories',
-  initialState: initialState,
+  initialState: intialState,
   reducers: {
     resetCategories: () => {
-      return initialState;
+      return intialState;
     },
     updateSelectedCategoryId: (
       state: CategoriesProps,

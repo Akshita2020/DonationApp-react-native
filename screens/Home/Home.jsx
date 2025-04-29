@@ -19,8 +19,11 @@ import {updateSelectedCategoryId} from '../../redux/reducers/Categories';
 
 const Home = () => {
   const user = useSelector(state => state.user);
-  const dispatch = useDispatch();
   const categories = useSelector(state => state.categories);
+  const donations = useSelector(state => state.donations);
+  const dispatch = useDispatch();
+  // dispatch(resetDonations());
+  console.log(donations);
   console.log('Categories:', categories);
 
   const updateUserName = () => {

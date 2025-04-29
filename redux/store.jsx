@@ -4,10 +4,12 @@ import {persistStore, persistReducer} from 'redux-persist';
 import logger from 'redux-logger';
 import Categories from './reducers/Categories';
 import User from './reducers/Users';
+import Donations from './reducers/Donation';
 
 const rootReducer = combineReducers({
   user: User,
   categories: Categories,
+  donations: Donations,
 });
 
 const configuration = {
