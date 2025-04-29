@@ -4,8 +4,8 @@ import {horizontalScale, scaleFontSize} from '../../assets/styles/scaling';
 
 const styles = StyleSheet.create({
   titleContainer: {
-    marginVertical: horizontalScale(23),
-    marginHorizontal: horizontalScale(16),
+    marginVertical: horizontalScale(8),
+    marginHorizontal: horizontalScale(-1),
   },
   subtitle: {
     fontFamily: getFontFamily('Inter_18pt', '400'),

@@ -31,6 +31,7 @@ const Search = ({onSearch}: SearchProps) => {
         size={scaleFontSize(22)}
       />
       <TextInput
+        placeholder="Search"
         style={styles.searchInput}
         ref={textInputRef}
         value={search}

@@ -6,9 +6,15 @@ interface HeaderProps {
   title: string;
   type?: number;
   color?: string;
+  placeholder: string;
 }
 
-const Header = ({title, type = 1, color = '#000000'}: HeaderProps) => {
+const Header = ({
+  title,
+  type = 1,
+  color = '#000000',
+  placeholder = 'Search',
+}: HeaderProps) => {
   const styleToApply = () => {
     switch (type) {
       case 1:
