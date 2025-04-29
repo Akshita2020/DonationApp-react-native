@@ -13,7 +13,6 @@ const Home = () => {
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
       <Header title={user.firstName + ' ' + user.lastName} />
       <Pressable onPress={() => dispatch(updateFirstName('Akshu'))}>
-        {' '}
         <Text> Press me to change firstName </Text>
       </Pressable>
     </SafeAreaView>
