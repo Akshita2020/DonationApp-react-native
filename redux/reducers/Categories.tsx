@@ -72,9 +72,9 @@ export const Categories = createSlice({
     },
     updateSelectedCategoryId: (
       state: CategoriesProps,
-      action: {payload: string},
+      action: {payload: number},
     ) => {
-      state.selectedCategoryId = parseInt(action.payload, 10);
+      state.selectedCategoryId = action.payload;
     },
   },
 });
