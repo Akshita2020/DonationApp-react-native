@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -27,6 +27,28 @@ const Home = () => {
     dispatch(updateFirstName('John'));
   };
 
+  const [categoryPage, setCategoryPage] = useState(1);
+  const [categoryList, setCategoryList] = useState([]);
+  const [isLoadingCategories, setIsLoadingCategories] = useState(false);
+  const categoryPageSize = 4;
+
+  const pagination = (items, pageNumber, pageSize) => {
+    const startIndex = (pageNumber - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    if (startIndex >= items.length) {
+      return [];
+    }
+    return items.slice(startIndex, endIndex);
+  };
+
+  useEffect(() => {
+    setIsLoadingCategories(true);
+    setCategoryList(pagination(categories, categoryPage, categoryPageSize));
+    setCategoryPage(prevPage => prevPage + 1);
+    setIsLoadingCategories(false);
+  }, []);
+  console.log(categoryList.length);
+
   console.log(user);
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
@@ -54,15 +76,35 @@ const Home = () => {
             resizeMode={'contain'}
           />
         </Pressable>
-        <View style = {styles.categoriesHeader}>
+        <View style={styles.categoriesHeader}>
           <Header title={'Select Category '} type={2} />
         </View>
         <View style={styles.categories}>
           <FlatList
+            onEndReachedThreshold={0.5}
+            onEndReached={() => {
+              if (isLoadingCategories) return;
+              console.log(
+                'User has reached the end of the list and we are getting more data for pageNumber',
+                categoryPage,
+              );
+              setIsLoadingCategories(true);
+
+              let newData = pagination(
+                categories,
+                categoryPage,
+                categoryPageSize,
+              );
+              if (newData.lenght > 0) {
+                setCategoryList(prevData => [...prevData, ...newData]);
+                setCategoryPage(prevPage => prevPage + 1);
+              }
+              setIsLoadingCategories(false);
+            }}
             horizontal={true}
             keyExtractor={item => item.categoryId.toString()}
             showsHorizontalScrollIndicator={false}
-            data={categories}
+            data={categoryList}
             renderItem={({item}) => (
               <View style={styles.categoryItem} key={item.categoryId}>
                 <Tab
