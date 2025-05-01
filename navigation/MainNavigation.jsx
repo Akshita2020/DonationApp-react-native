@@ -2,6 +2,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from '../screens/Home/Home';
 import SingleDonationItem from '../screens/SingleDonationItem/SingleDonationItem';
 import Login from '../screens/Login/Login';
+import Registration from '../screens/Registration/Registration';
 import {Routes} from './Routes';
 
 const Stack = createStackNavigator();
@@ -17,6 +18,7 @@ export const MainNavigation = () => {
         component={SingleDonationItem}
       />
       <Stack.Screen name={Routes.Login} component={Login} />
+      <Stack.Screen name={Routes.Registration} component={Registration} />
     </Stack.Navigator>
   );
 };
