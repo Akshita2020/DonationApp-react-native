@@ -1,11 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-interface CategoriesProps {
-  categories: {categoryId: number; name: string}[];
-  selectedCategoryId: number;
-}
-
-const intialState: CategoriesProps = {
+const initialState = {
   categories: [
     {
       categoryId: 1,
@@ -63,21 +58,19 @@ const intialState: CategoriesProps = {
   selectedCategoryId: 1,
 };
 
-export const Categories = createSlice({
+const Categories = createSlice({
   name: 'categories',
-  initialState: intialState,
+  initialState: initialState,
   reducers: {
     resetCategories: () => {
-      return intialState;
+      return initialState;
     },
-    updateSelectedCategoryId: (
-      state: CategoriesProps,
-      action: {payload: number},
-    ) => {
+    updateSelectedCategoryId: (state, action) => {
       state.selectedCategoryId = action.payload;
     },
   },
 });
+
 export const {resetCategories, updateSelectedCategoryId} = Categories.actions;
 
 export default Categories.reducer;

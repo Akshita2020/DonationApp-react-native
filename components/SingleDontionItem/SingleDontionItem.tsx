@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, Image} from 'react-native';
+import {Pressable, View, Image} from 'react-native';
 import Badge from '../Badge/Badge';
 import styles from './styles';
 import Header from '../Header/Header';
@@ -9,21 +9,28 @@ interface SingleDontionItemProps {
   badgeTitle: string;
   donationTitle: string;
   price: number;
+  onPress: (donationItemId: number) => void;
+  donationItemId: number;
 }
 
 const SingleDontionItem = ({
   uri,
   badgeTitle,
+  donationItemId,
   donationTitle,
   price,
+  onPress,
 }: SingleDontionItemProps) => {
   return (
-    <View>
+    <Pressable
+      onPress={() => {
+        onPress(donationItemId);
+      }}>
       <View>
         <View style={styles.badge}>
           <Badge title={badgeTitle} />
         </View>
-        <Image source={{uri: uri}} style={styles.image} resizeMode='contain' />
+        <Image source={{uri: uri}} style={styles.image} resizeMode="cover" />
       </View>
       <View style={styles.donationConatiner}>
         <Header title={donationTitle} type={3} color={'#0A043C'} />
@@ -31,7 +38,7 @@ const SingleDontionItem = ({
           <Header title={'$' + price.toFixed(2)} type={3} color={'#156CF7'} />
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 

@@ -6,7 +6,7 @@ interface HeaderProps {
   title: string;
   type?: number;
   color?: string;
-  placeholder: string;
+  placeholder?: string;
 }
 
 const Header = ({

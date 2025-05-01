@@ -30,4 +30,4 @@ const store = configureStore({
 });
 
 export default store;
-export const persistor = persistStore(store);
+// export const persistor = persistStore(store);

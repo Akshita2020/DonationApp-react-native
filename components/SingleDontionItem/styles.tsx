@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
   image: {
     width: horizontalScale(155),
     height: verticalScale(170),
+    borderRadius: horizontalScale(20),
   },
   badge: {
     position: 'absolute',
