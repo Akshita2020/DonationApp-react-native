@@ -20,6 +20,17 @@ const configuration = {
 
 const persistedReducer = persistReducer(configuration, rootReducer);
 
+// const unpersistedReducer = rootReducer;
+
+// const store = configureStore({
+//   reducer: unpersistedReducer,
+//   middleware: getDefaultMiddleware => {
+//     return getDefaultMiddleware({
+//       serializableCheck: false,
+//     }).concat(logger);
+//   },
+// });
+
 const store = configureStore({
   reducer: persistedReducer,
   middleware: getDefaultMiddleware => {

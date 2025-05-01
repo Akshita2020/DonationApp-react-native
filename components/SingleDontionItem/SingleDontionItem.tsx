@@ -25,6 +25,7 @@ const SingleDontionItem = ({
     <Pressable
       onPress={() => {
         onPress(donationItemId);
+        console.log('Donation item ID:', donationItemId);
       }}>
       <View>
         <View style={styles.badge}>
@@ -33,7 +34,12 @@ const SingleDontionItem = ({
         <Image source={{uri: uri}} style={styles.image} resizeMode="cover" />
       </View>
       <View style={styles.donationConatiner}>
-        <Header title={donationTitle} type={3} color={'#0A043C'} />
+        <Header
+          title={donationTitle}
+          type={3}
+          color={'#0A043C'}
+          numberOfLines={1}
+        />
         <View style={styles.price}>
           <Header title={'$' + price.toFixed(2)} type={3} color={'#156CF7'} />
         </View>

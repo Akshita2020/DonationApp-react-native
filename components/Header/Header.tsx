@@ -7,6 +7,7 @@ interface HeaderProps {
   type?: number;
   color?: string;
   placeholder?: string;
+  numberOfLines?: number;
 }
 
 const Header = ({
@@ -14,6 +15,7 @@ const Header = ({
   type = 1,
   color = '#000000',
   placeholder = 'Search',
+  numberOfLines,
 }: HeaderProps) => {
   const styleToApply = () => {
     switch (type) {
@@ -28,7 +30,11 @@ const Header = ({
   return (
     <View style={styles.titleContainer}>
       {/* <Text style={styles.subtitle}>Hello,</Text> */}
-      <Text style={[styleToApply(), color && {color}]}>{title}</Text>
+      <Text
+        style={[styleToApply(), color && {color}]}
+        numberOfLines={numberOfLines ? numberOfLines : undefined}>
+        {title}
+      </Text>
     </View>
   );
 };

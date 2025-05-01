@@ -16,8 +16,9 @@ import styles from './styles';
 import Tab from '../../components/Tab/Tab';
 import {updateSelectedCategoryId} from '../../redux/reducers/Categories';
 import SingleDonationItem from '../../components/SingleDontionItem/SingleDontionItem';
-
-const Home = () => {
+import {updateSelectedDonationId} from '../../redux/reducers/Donation';
+import {Routes} from '../../navigation/Routes';
+const Home = ({navigation}) => {
   const dispatch = useDispatch();
   const categories = useSelector(state => state.categories);
   const selectedCategoryId = useSelector(
@@ -131,19 +132,25 @@ const Home = () => {
         {donationItems.length > 0 && (
           <View style={styles.donationItemsContainer}>
             {donationItems.map(value => (
-              <SingleDonationItem
-                onPress={selectedDonationId => {}}
-                donationItemId={value.donationItemId}
-                uri={value.image}
-                donationTitle={value.name}
-                badgeTitle={
-                  categories.categories.filter(
-                    val => val.categoryId === categories.selectedCategoryId,
-                  )[0].name
-                }
+              <View
                 key={value.donationItemId}
-                price={parseFloat(value.price)}
-              />
+                style={styles.singleDonationItem}>
+                <SingleDonationItem
+                  onPress={selectedDonationId => {
+                    dispatch(updateSelectedDonationId(selectedDonationId));
+                    navigation.navigate(Routes.SingleDonationItem);
+                  }}
+                  donationItemId={value.donationItemId}
+                  uri={value.image}
+                  donationTitle={value.name}
+                  badgeTitle={
+                    categories.categories.filter(
+                      val => val.categoryId === categories.selectedCategoryId,
+                    )[0].name
+                  }
+                  price={parseFloat(value.price)}
+                />
+              </View>
             ))}
           </View>
         )}

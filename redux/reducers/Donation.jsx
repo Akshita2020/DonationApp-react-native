@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import { persistor } from '../store';
+import {persistor} from '../store';
 
 const initialState = {
   items: [
@@ -205,17 +205,21 @@ const initialState = {
     },
   ],
   selectedDonationId: null,
+  selectedDonationinformation: {},
 };
 
 const Donations = createSlice({
   name: 'donations',
   initialState: initialState,
-  reducer: {
+  reducers: {
     resetDonations: () => {
       return initialState;
     },
     updateSelectedDonationId: (state, action) => {
       state.selectedDonationId = action.payload;
+      state.selectedDonationinformation = state.items.find(
+        item => item.donationItemId === action.payload,
+      );
     },
   },
 });
