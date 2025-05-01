@@ -1,18 +1,22 @@
 import {createStackNavigator} from '@react-navigation/stack';
 import Home from '../screens/Home/Home';
 import SingleDonationItem from '../screens/SingleDonationItem/SingleDonationItem';
+import Login from '../screens/Login/Login';
 import {Routes} from './Routes';
 
 const Stack = createStackNavigator();
 
 export const MainNavigation = () => {
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator
+      initialRouteName={Routes.Login}
+      screenOptions={{headerShown: false}}>
       <Stack.Screen name={Routes.Home} component={Home} />
       <Stack.Screen
         name={Routes.SingleDonationItem}
         component={SingleDonationItem}
       />
+      <Stack.Screen name={Routes.Login} component={Login} />
     </Stack.Navigator>
   );
 };
