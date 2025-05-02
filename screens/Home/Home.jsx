@@ -29,6 +29,7 @@ const Home = ({navigation, route}) => {
   const donations = useSelector(state => state.donations);
   console.log('donations :::::::::::::::', donations);
   const user = useSelector(state => state.user);
+  console.log('user :::::::::::::::', user);
   const [categoryPage, setCategoryPage] = useState(1);
   const [categoryList, setCategoryList] = useState([]);
   const [donationItems, setDonationItems] = useState([]);
@@ -68,7 +69,7 @@ const Home = ({navigation, route}) => {
           <View>
             <Text style={styles.headerInfoText}>Hello, </Text>
             <View style={styles.userName}>
-              <Header title={user.firstName + ' ' + user.lastName[0] + '.👋'} />
+              <Header title={user.displayName + '.👋'} />
             </View>
           </View>
           <Image

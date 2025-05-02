@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {getFontFamily} from '../../assets/fonts/helper';
 import {
   horizontalScale,
   verticalScale,
@@ -16,6 +17,18 @@ const styles = StyleSheet.create({
   backButton: {
     marginLeft: horizontalScale(14),
     marginTop: verticalScale(7),
+  },
+  error: {
+    fontFamily: getFontFamily('Inter_18pt', '500'),
+    fontSize: scaleFontSize(16),
+    color: '#FF0000',
+    marginBottom: verticalScale(24),
+  },
+  success: {
+    fontFamily: getFontFamily('Inter_18pt', '500'),
+    fontSize: scaleFontSize(16),
+    color: '#28a745',
+    marginBottom: verticalScale(24),
   },
 });
 
