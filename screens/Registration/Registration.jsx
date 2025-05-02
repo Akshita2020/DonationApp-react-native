@@ -6,9 +6,10 @@ import globalStyle from '../../assets/styles/globalStyle';
 import Input from '../../components/Input/Input';
 import Header from '../../components/Header/Header';
 import Button from '../../components/Button/Button';
+import {createUser} from '../../api/users';
 
 const Registration = ({navigation}) => {
-  const [name, setName] = useState('');
+  const [fullName, setfullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   console.log(password);
@@ -29,7 +30,7 @@ const Registration = ({navigation}) => {
             keyboardType={'email-address'}
             label={'First & Last Name'}
             placeholder={'Enter your full name...'}
-            onChangeText={value => setName(value)}
+            onChangeText={value => setfullName(value)}
           />
         </View>
         <View style={globalStyle.marginBottom24}>
@@ -49,7 +50,10 @@ const Registration = ({navigation}) => {
           />
         </View>
         <View style={globalStyle.marginBottom24}>
-          <Button title={'Registration'} />
+          <Button
+            title={'Registration'}
+            onPress={async () => await createUser(fullName, email, password)}
+          />
         </View>
         <Pressable style={styles.registrationButton} />
       </ScrollView>
