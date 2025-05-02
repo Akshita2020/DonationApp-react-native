@@ -25,11 +25,11 @@ const Home = ({navigation, route}) => {
     state => state.categories.selectedCategoryId,
   );
 
-  console.log('categories :::::::::::::::', categories);
+  console.log('categories >>', categories);
   const donations = useSelector(state => state.donations);
-  console.log('donations :::::::::::::::', donations);
+  console.log('donations >>', donations);
   const user = useSelector(state => state.user);
-  console.log('user :::::::::::::::', user);
+  console.log('user >>', user);
   const [categoryPage, setCategoryPage] = useState(1);
   const [categoryList, setCategoryList] = useState([]);
   const [donationItems, setDonationItems] = useState([]);

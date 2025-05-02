@@ -7,18 +7,27 @@ import {Routes} from './Routes';
 
 const Stack = createStackNavigator();
 
-export const MainNavigation = () => {
+export const Unauthenticated = () => {
   return (
     <Stack.Navigator
       initialRouteName={Routes.Login}
+      screenOptions={{headerShown: false}}>
+      <Stack.Screen name={Routes.Login} component={Login} />
+      <Stack.Screen name={Routes.Registration} component={Registration} />
+    </Stack.Navigator>
+  );
+};
+
+export const Authenticated = () => {
+  return (
+    <Stack.Navigator
+      initialRouteName={Routes.Home}
       screenOptions={{headerShown: false}}>
       <Stack.Screen name={Routes.Home} component={Home} />
       <Stack.Screen
         name={Routes.SingleDonationItem}
         component={SingleDonationItem}
       />
-      <Stack.Screen name={Routes.Login} component={Login} />
-      <Stack.Screen name={Routes.Registration} component={Registration} />
     </Stack.Navigator>
   );
 };
