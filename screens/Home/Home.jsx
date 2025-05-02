@@ -18,6 +18,8 @@ import {updateSelectedCategoryId} from '../../redux/reducers/Categories';
 import SingleDonationItem from '../../components/SingleDonationItem/SingleDonationItem';
 import {updateSelectedDonationId} from '../../redux/reducers/Donation';
 import {Routes} from '../../navigation/Routes';
+import {resetToInitialState} from '../../redux/reducers/Users';
+import {logout} from '../../api/users';
 const Home = ({navigation, route}) => {
   const dispatch = useDispatch();
   const categories = useSelector(state => state.categories);
@@ -72,11 +74,20 @@ const Home = ({navigation, route}) => {
               <Header title={user.displayName + '.👋'} />
             </View>
           </View>
-          <Image
-            source={{uri: user.profileImage}}
-            style={styles.profileImage}
-            resizeMode={'contain'}
-          />
+          <View>
+            <Image
+              source={{uri: user.profileImage}}
+              style={styles.profileImage}
+              resizeMode={'contain'}
+            />
+            <Pressable
+              onPress={async () => {
+                dispatch(resetToInitialState());
+                await logout();
+              }}>
+              <Header title={'Logout'} type={3} color="#156CF7" />
+            </Pressable>
+          </View>
         </View>
         <View style={styles.searchConatiner}>
           <Search />

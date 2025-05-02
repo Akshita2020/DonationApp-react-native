@@ -3,7 +3,7 @@ import {createSlice} from '@reduxjs/toolkit';
 const intialState = {
   isLoggedIn: false,
   profileImage:
-    'https://images.unsplash.com/photo-1745604785337-96f95b719df5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw5fHx8ZW58MHx8fHx8',
+    'https://plus.unsplash.com/premium_photo-1732757787074-0f95bf19cf73?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Ymx1ZSUyMGNhcnRvb24lMjBwcm9maWxlJTIwcGljdHVyZXxlbnwwfHwwfHx8MA%3D%3D',
 };
 export const User = createSlice({
   name: 'user',

@@ -42,3 +42,11 @@ export const loginUser = async (email, password) => {
     return {status: false, error: 'Something went wrong, please try again'};
   }
 };
+
+export const logout = async () => {
+  try {
+    await auth().signOut();
+  } catch (error) {
+    console.log(error);
+  }
+};

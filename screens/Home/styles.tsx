@@ -24,8 +24,11 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(-2),
   },
   profileImage: {
-    width: horizontalScale(50),
-    height: verticalScale(50),
+    width: horizontalScale(40),
+    height: verticalScale(40),
+    borderRadius: horizontalScale(40) / 2,
+    backgroundColor: '#156CF7',
+    marginBottom: horizontalScale(-2),
   },
   searchConatiner: {
     marginHorizontal: horizontalScale(20),
