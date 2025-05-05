@@ -1,6 +1,6 @@
 import auth from '@react-native-firebase/auth';
 import store from '../redux/store';
-import {updateToken} from '../redux/actions/userActions';
+import {updateToken} from '../redux/reducers/Users';
 
 export const createUser = async (fullName, email, password) => {
   try {

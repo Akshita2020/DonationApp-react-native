@@ -20,6 +20,7 @@ import {updateSelectedDonationId} from '../../redux/reducers/Donation';
 import {Routes} from '../../navigation/Routes';
 import {resetToInitialState} from '../../redux/reducers/Users';
 import {logout} from '../../api/users';
+
 const Home = ({navigation, route}) => {
   const dispatch = useDispatch();
   const categories = useSelector(state => state.categories);
@@ -74,6 +75,7 @@ const Home = ({navigation, route}) => {
               <Header title={user.displayName + '.👋'} />
             </View>
           </View>
+
           <View>
             <Image
               source={{uri: user.profileImage}}

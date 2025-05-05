@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './styles';
 import {Pressable, View, SafeAreaView, ScrollView, Text} from 'react-native';
 import {loginUser} from '../../api/users';
@@ -15,8 +15,10 @@ const Login = ({navigation}) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(resetToInitialState());
+  }, []);
 
-  dispatch(resetToInitialState());
   console.log(password);
   console.log(email);
   return (

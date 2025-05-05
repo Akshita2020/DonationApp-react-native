@@ -7,6 +7,7 @@ import globalStyle from '../../assets/styles/globalStyle';
 import Header from '../../components/Header/Header';
 import Badge from '../../components/Badge/Badge';
 import Button from '../../components/Button/Button';
+import {Routes} from '../../navigation/Routes';
 import PropTypes from 'prop-types';
 
 const SingleDonationItem = ({navigation, route}) => {
@@ -35,16 +36,15 @@ const SingleDonationItem = ({navigation, route}) => {
         <Header type={1} title={donationItemInformation.name} />
         <Text style={styles.description}>
           {donationItemInformation.description}
-          {donationItemInformation.description}
-          {donationItemInformation.description}
-          {donationItemInformation.description}
-          {donationItemInformation.description}
-          {donationItemInformation.description}
-          {donationItemInformation.description}
         </Text>
       </ScrollView>
       <View style={styles.button}>
-        <Button title={'Donate'} />
+        <Button
+          title={'Donate'}
+          onPress={() => {
+            navigation.navigate(Routes.Payment);
+          }}
+        />
       </View>
     </SafeAreaView>
   );
