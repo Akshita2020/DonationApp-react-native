@@ -66,6 +66,8 @@
 		939257B005A0419F8AFDD2B0 /* Inter_28pt-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BFC9922294D4F2C984C34CE /* Inter_28pt-Thin.ttf */; };
 		C14B5A6B52D54127A7D2C30C /* Inter_28pt-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 222107CFEAD548DAAFF538A2 /* Inter_28pt-ThinItalic.ttf */; };
 		3F3112C635FB4D13825F54F0 /* helper.ts in Resources */ = {isa = PBXBuildFile; fileRef = 03C0A731121C46B7B76F79F6 /* helper.ts */; };
+		D403E813A6E145799B3A692E /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 474A8802723B4E339B739515 /* BootSplash.storyboard */; };
+		5603ADD418284A3AA959CBA2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1CD62EF560542428668FD6A /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +147,8 @@
 		6BFC9922294D4F2C984C34CE /* Inter_28pt-Thin.ttf */ = {isa = PBXFileReference; name = "Inter_28pt-Thin.ttf"; path = "../assets/fonts/Inter_28pt-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		222107CFEAD548DAAFF538A2 /* Inter_28pt-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Inter_28pt-ThinItalic.ttf"; path = "../assets/fonts/Inter_28pt-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		03C0A731121C46B7B76F79F6 /* helper.ts */ = {isa = PBXFileReference; name = "helper.ts"; path = "../assets/fonts/helper.ts"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		474A8802723B4E339B739515 /* BootSplash.storyboard */ = {isa = PBXFileReference; name = "BootSplash.storyboard"; path = "DonationApp/BootSplash.storyboard"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E1CD62EF560542428668FD6A /* Colors.xcassets */ = {isa = PBXFileReference; name = "Colors.xcassets"; path = "DonationApp/Colors.xcassets"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = folder.assetcatalog; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				474A8802723B4E339B739515 /* BootSplash.storyboard */,
+				E1CD62EF560542428668FD6A /* Colors.xcassets */,
 			);
 			name = DonationApp;
 			sourceTree = "<group>";
@@ -414,6 +420,8 @@
 				939257B005A0419F8AFDD2B0 /* Inter_28pt-Thin.ttf in Resources */,
 				C14B5A6B52D54127A7D2C30C /* Inter_28pt-ThinItalic.ttf in Resources */,
 				3F3112C635FB4D13825F54F0 /* helper.ts in Resources */,
+				D403E813A6E145799B3A692E /* BootSplash.storyboard in Resources */,
+				5603ADD418284A3AA959CBA2 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
